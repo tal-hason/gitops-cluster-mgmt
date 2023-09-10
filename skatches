@@ -1,0 +1,8 @@
+export GITHUB_URL=https://github.com/tal-hason/gitops-cluster-mgmt
+
+argocd app create app-of-apps \
+    --server openshift-gitops-server.openshift-gitops.svc.cluster.local \
+    --dest-namespace openshift-gitops \
+    --dest-server https://kubernetes.default.svc \
+    --repo $GITHUB_URL \
+    --path apps
